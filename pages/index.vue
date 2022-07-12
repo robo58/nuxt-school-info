@@ -83,15 +83,15 @@
                                     <v-expansion-panels>
                                       <v-expansion-panel v-for="(student,i) in department.students" :key="student.ID">
                                         <v-expansion-panel-header>
-                                            <h3>{{ student.name }}</h3>
+                                            <h3>{{ student.student.name }}</h3>
                                         </v-expansion-panel-header>
                                         <v-expansion-panel-content>
                                           <v-card>
                                             <v-card-text>
                                               <v-row>
                                                 <v-col>
-                                                  <v-row>Name: {{ student.name }}</v-row>
-                                                  <v-row>Email: {{student.email}}</v-row>
+                                                  <v-row>Name: {{ student.student.name }}</v-row>
+                                                  <v-row>Email: {{student.student.email}}</v-row>
                                                 </v-col>
                                               </v-row>
                                               <v-row class="ma-5 pa-5" v-if="student.subjects">
@@ -99,16 +99,15 @@
                                                 <v-expansion-panels>
                                                   <v-expansion-panel v-for="(subject,i) in student.subjects" :key="subject.ID">
                                                     <v-expansion-panel-header>
-                                                        <h3>{{ subject.name }}</h3>
+                                                        <h3>{{ subject.subject.name }}</h3>
                                                     </v-expansion-panel-header>
                                                     <v-expansion-panel-content>
                                                       <v-card>
                                                         <v-card-text>
                                                           <v-row>
                                                             <v-col>
-                                                              <v-row>Name: {{ subject.name }}</v-row>
+                                                              <v-row>Name: {{ subject.subject.name }}</v-row>
                                                               <v-row>Grade: {{ subject.grade }}</v-row>
-                                                              <v-row>Teacher name: {{subject.teacher.name}}</v-row>
                                                             </v-col>
                                                           </v-row>
                                                         </v-card-text>
