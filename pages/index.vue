@@ -8,8 +8,8 @@
         <v-card-text class="mt-6">
           <v-row>
             <v-col>
-              <v-btn @click="oauthLogin">OAuth Login</v-btn>
-              <v-btn @click="oidcLogin">OpenID Login</v-btn>
+              <v-btn @click="oauthLogin">Login</v-btn>
+<!--              <v-btn @click="oidcLogin">OpenID Login</v-btn>-->
             </v-col>
             <v-col>
               <v-row>Access token: {{ accessToken }}</v-row>
@@ -159,6 +159,7 @@ export default {
       try{
         let data = await this.$axios.$get('/oauth/user')
         this.accessToken = data.token;
+        this.idToken = data.id_token;
         this.scopes = data.scopes;
         this.user = data.user;
       } catch (e) {
